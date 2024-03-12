@@ -1,0 +1,22 @@
+{
+  "name": "selenium-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcarlin01/selenium-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gcarlin01/selenium-practice/issues"
+  },
+  "homepage": "https://github.com/gcarlin01/selenium-practice#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.18.1"
+  }
+}
