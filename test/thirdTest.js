@@ -1,7 +1,22 @@
 const { Builder } = require("selenium-webdriver");
+const lambdaTestCapabilities = require("../capabilities");
 var should = require("chai").should();
 
 describe("add another todo app test", function () {
+  //username for lambdatest
+  const USERNAME = lambdaTestCapabilities.capability["LT:Options"].username;
+
+  //key
+  const KEY = lambdaTestCapabilities.capability["LT:Options"].accessKey;
+
+  //host
+  const GRID_HOST = "hub.lambdatest.com/wd/hub";
+
+  //url
+  const gridURL = `https://${USERNAME}:${KEY}@${GRID_HOST}`;
+
+  beforeEach(function () {});
+
   it("successfully adds another todo to application", async function () {
     // launch the browser
     let driver = await new Builder().forBrowser("firefox").build();
