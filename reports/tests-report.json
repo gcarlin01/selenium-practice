@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2024-03-13T00:12:46.895Z",
-    "end": "2024-03-13T00:12:53.531Z",
-    "duration": 6636,
+    "start": "2024-04-05T17:54:04.830Z",
+    "end": "2024-04-05T17:54:14.130Z",
+    "duration": 9300,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8b5c8ce0-c68e-4435-adda-1429cedd252b",
+      "uuid": "548bd43d-5c47-4770-b7d2-97d8a93ddba0",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,65 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3a29e946-8cb0-45a4-baae-2c65bf667c1b",
+          "uuid": "53609d13-c375-49a3-a824-28da3434e7ff",
+          "title": "add another todo app test",
+          "fullFile": "/Users/giancarlocarlin/Projects/selenium-practice/test/thirdTest.js",
+          "file": "/test/thirdTest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"add another todo app test\"",
+              "fullTitle": "add another todo app test \"before each\" hook in \"add another todo app test\"",
+              "timedOut": null,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "688acb5d-1020-4f82-91c4-3d3da753968f",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully adds another todo to application",
+              "fullTitle": "add another todo app test successfully adds another todo to application",
+              "timedOut": null,
+              "duration": 8753,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// launch the browser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n// navigate to the url\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\n// add a todo using locators and actions\nawait driver\n  .findElement({ id: \"sampletodotext\" })\n  .sendKeys(\"Learn to automate with Selenium\");\nawait driver.findElement({ id: \"addbutton\" }).click();\n// assert the todo\nlet newTodo = await driver\n  .findElement({\n    xpath: \"//li[last()]\",\n  })\n  .getText();\n// assert using chai should library\nnewTodo.should.equal(\"Learn to automate with Selenium\");\nawait driver.quit();",
+              "err": {},
+              "uuid": "af65ca98-198e-4784-bc10-2cd42b20551c",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "af65ca98-198e-4784-bc10-2cd42b20551c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8753,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "6cbd327b-3a58-4bec-919e-bf28b7b4b136",
           "title": "add todo app tests",
           "fullFile": "/Users/giancarlocarlin/Projects/selenium-practice/test/secondTestWithMocha.js",
           "file": "/test/secondTestWithMocha.js",
@@ -38,7 +96,7 @@
               "title": "successfully adds a todo to application",
               "fullTitle": "add todo app tests successfully adds a todo to application",
               "timedOut": null,
-              "duration": 6209,
+              "duration": 8912,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,7 +105,7 @@
               "context": null,
               "code": "// launch the browser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n// navigate to the url\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\n// add a todo using locators and actions\nawait driver\n  .findElement({ id: \"sampletodotext\" })\n  .sendKeys(\"Learn to automate with Selenium\");\nawait driver.findElement({ id: \"addbutton\" }).click();\n// assert the todo\nlet newTodo = await driver\n  .findElement({\n    xpath: \"//li[last()]\",\n  })\n  .getText();\n// assert using chai should library\nnewTodo.should.equal(\"Learn to automate with Selenium\");\nawait driver.quit();",
               "err": {},
-              "uuid": "1e22f6b9-136d-4002-8801-f48cdc0f6fa8",
+              "uuid": "dfa9c199-31e2-423d-8e12-e651daacfd9d",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,51 +113,12 @@
           ],
           "suites": [],
           "passes": [
-            "1e22f6b9-136d-4002-8801-f48cdc0f6fa8"
+            "dfa9c199-31e2-423d-8e12-e651daacfd9d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6209,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": null
-        },
-        {
-          "uuid": "f8ce552b-1344-40e7-8a2b-a2936556691b",
-          "title": "add another todo app test",
-          "fullFile": "/Users/giancarlocarlin/Projects/selenium-practice/test/thirdTest.js",
-          "file": "/test/thirdTest.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "successfully adds another todo to application",
-              "fullTitle": "add another todo app test successfully adds another todo to application",
-              "timedOut": null,
-              "duration": 6286,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "// launch the browser\nlet driver = await new Builder().forBrowser(\"firefox\").build();\n// navigate to the url\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\n// add a todo using locators and actions\nawait driver\n  .findElement({ id: \"sampletodotext\" })\n  .sendKeys(\"Learn to automate with Selenium\");\nawait driver.findElement({ id: \"addbutton\" }).click();\n// assert the todo\nlet newTodo = await driver\n  .findElement({\n    xpath: \"//li[last()]\",\n  })\n  .getText();\n// assert using chai should library\nnewTodo.should.equal(\"Learn to automate with Selenium\");\nawait driver.quit();",
-              "err": {},
-              "uuid": "e3186af8-2d51-467d-a9cf-da7f3e9bfa7c",
-              "parentUUID": null,
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "e3186af8-2d51-467d-a9cf-da7f3e9bfa7c"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 6286,
+          "duration": 8912,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
@@ -117,7 +136,7 @@
   ],
   "meta": {
     "mocha": {
-      "version": "10.3.0"
+      "version": "10.4.0"
     },
     "mochawesome": {
       "options": {
