@@ -3,6 +3,8 @@ const lambdaTestCapabilities = require("../capabilities");
 var should = require("chai").should();
 
 describe("add another todo app test", function () {
+  var driver;
+
   //username for lambdatest
   const USERNAME = lambdaTestCapabilities.capability["LT:Options"].username;
 
@@ -15,11 +17,22 @@ describe("add another todo app test", function () {
   //url
   const gridURL = `https://${USERNAME}:${KEY}@${GRID_HOST}`;
 
-  beforeEach(function () {});
+  beforeEach(function () {
+    lambdaTestCapabilities.capability["LT:Options"].build =
+      this.currentTest.title;
+    driver = new Builder()
+      .usingServer(gridURL)
+      .withCapabilities(lambdaTestCapabilities.capability)
+      .build();
+  });
+
+  afterEach(async function () {
+    await driver.quit();
+  });
 
   it("successfully adds another todo to application", async function () {
     // launch the browser
-    let driver = await new Builder().forBrowser("firefox").build();
+    //let driver = await new Builder().forBrowser("firefox").build();
 
     // navigate to the url
     await driver.get("https://lambdatest.github.io/sample-todo-app/");
@@ -39,7 +52,5 @@ describe("add another todo app test", function () {
 
     // assert using chai should library
     newTodo.should.equal("Learn to automate with Selenium");
-
-    await driver.quit();
   });
 });
